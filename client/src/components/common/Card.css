@@ -1,0 +1,42 @@
+.dp-card {
+  background-color: var(--dp-color-bg-elevated);
+  border: 1px solid var(--dp-color-border);
+  border-radius: var(--dp-radius-xl);
+  padding: var(--dp-space-6);
+  box-shadow: var(--dp-shadow-md);
+  transition: all var(--dp-transition-base);
+  overflow: hidden;
+}
+
+/* Glassmorphism Effect */
+.dp-card-glass {
+  /* We use a slightly transparent background for the glass effect */
+  background-color: rgba(30, 38, 55, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px); /* Safari support */
+}
+
+/* Hover Animation */
+.dp-card-hoverable:hover {
+  transform: translateY(-4px); /* Lifts the card up */
+  box-shadow: var(--dp-shadow-xl);
+  border-color: var(--dp-color-primary); /* Glows with primary color */
+}
+
+/* Clickable State */
+.dp-card-clickable {
+  cursor: pointer;
+}
+
+.dp-card-clickable:active {
+  transform: translateY(-2px); /* Pushes down slightly when clicked */
+  box-shadow: var(--dp-shadow-lg);
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .dp-card {
+    padding: var(--dp-space-4);
+    border-radius: var(--dp-radius-lg);
+  }
+}

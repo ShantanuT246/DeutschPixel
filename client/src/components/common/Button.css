@@ -1,0 +1,66 @@
+.dp-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--dp-space-2);
+  border-radius: var(--dp-radius-md);
+  font-weight: var(--dp-font-weight-medium);
+  transition: all var(--dp-transition-fast);
+  position: relative;
+  overflow: hidden;
+}
+
+.dp-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* ─── Sizes ─────────────────────────────────────────────── */
+.dp-btn-md {
+  padding: var(--dp-space-3) var(--dp-space-5);
+  font-size: var(--dp-font-size-base);
+}
+.dp-btn-full { width: 100%; }
+
+/* ─── Variants ──────────────────────────────────────────── */
+.dp-btn-primary {
+  background-color: var(--dp-color-primary);
+  color: #fff;
+  box-shadow: var(--dp-shadow-md);
+}
+
+.dp-btn-primary:hover:not(:disabled) {
+  background-color: var(--dp-color-primary-hover);
+  transform: translateY(-1px);
+  box-shadow: var(--dp-shadow-lg);
+}
+
+.dp-btn-secondary {
+  background-color: var(--dp-color-bg-elevated);
+  color: var(--dp-color-text-primary);
+  border: 1px solid var(--dp-color-border);
+}
+
+.dp-btn-secondary:hover:not(:disabled) {
+  background-color: var(--dp-color-bg-secondary);
+  border-color: var(--dp-color-primary);
+}
+
+/* ─── Loading State ─────────────────────────────────────── */
+.dp-btn-loading .dp-btn-content {
+  visibility: hidden; /* Hide text but keep button width */
+}
+
+.dp-btn-spinner {
+  position: absolute;
+  width: 1.2em;
+  height: 1.2em;
+  border: 2px solid rgba(255,255,255,0.3);
+  border-radius: 50%;
+  border-top-color: #fff;
+  animation: dp-spin 0.8s linear infinite;
+}
+
+@keyframes dp-spin {
+  to { transform: rotate(360deg); }
+}

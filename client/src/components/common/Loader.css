@@ -1,0 +1,62 @@
+.dp-loader-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--dp-space-4);
+  padding: var(--dp-space-8);
+  width: 100%;
+}
+
+.dp-loader-fullscreen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--dp-color-bg-primary);
+  z-index: 50; /* Ensure it stays on top of everything */
+  padding: 0;
+}
+
+/* 4 overlapping rings that delay their spin to create a smooth trailing effect */
+.dp-loader-spinner {
+  display: inline-block;
+  position: relative;
+  width: 64px;
+  height: 64px;
+}
+
+.dp-loader-ring {
+  box-sizing: border-box;
+  display: block;
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  margin: 7px;
+  border: 4px solid var(--dp-color-primary);
+  border-radius: 50%;
+  animation: dp-loader-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  /* Make only the top border visible, the rest transparent */
+  border-color: var(--dp-color-primary) transparent transparent transparent;
+}
+
+.dp-loader-ring:nth-child(1) { animation-delay: -0.45s; }
+.dp-loader-ring:nth-child(2) { animation-delay: -0.3s; }
+.dp-loader-ring:nth-child(3) { animation-delay: -0.15s; }
+
+@keyframes dp-loader-ring {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.dp-loader-text {
+  color: var(--dp-color-text-secondary);
+  font-weight: var(--dp-font-weight-medium);
+  animation: dp-pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes dp-pulse {
+  0%, 100% { opacity: 0.6; }
+  50% { opacity: 1; }
+}

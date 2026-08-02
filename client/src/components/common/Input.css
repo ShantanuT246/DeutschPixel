@@ -1,0 +1,70 @@
+.dp-input-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: var(--dp-space-1);
+  width: 100%;
+}
+
+.dp-input-label {
+  font-size: var(--dp-font-size-sm);
+  font-weight: var(--dp-font-weight-medium);
+  color: var(--dp-color-text-secondary);
+}
+
+.dp-input-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.dp-input {
+  width: 100%;
+  padding: var(--dp-space-3) var(--dp-space-4);
+  background-color: var(--dp-color-bg-elevated);
+  border: 1px solid var(--dp-color-border);
+  border-radius: var(--dp-radius-md);
+  color: var(--dp-color-text-primary);
+  font-size: var(--dp-font-size-base);
+  transition: border-color var(--dp-transition-fast), box-shadow var(--dp-transition-fast);
+}
+
+/* The glow effect on click */
+.dp-input:focus {
+  border-color: var(--dp-color-primary);
+  box-shadow: 0 0 0 3px var(--dp-color-primary-light);
+}
+
+.dp-input::placeholder {
+  color: var(--dp-color-text-muted);
+}
+
+/* Icon support */
+.dp-input-icon {
+  position: absolute;
+  left: var(--dp-space-3);
+  color: var(--dp-color-text-muted);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none; /* Allows clicking through the icon to focus the input */
+}
+
+.dp-input-with-icon {
+  padding-left: calc(var(--dp-space-4) * 2 + 1rem);
+}
+
+/* Error state */
+.dp-input-error {
+  border-color: var(--dp-color-error);
+}
+
+.dp-input-error:focus {
+  border-color: var(--dp-color-error);
+  box-shadow: 0 0 0 3px rgba(230, 57, 70, 0.2);
+}
+
+.dp-input-error-msg {
+  font-size: var(--dp-font-size-xs);
+  color: var(--dp-color-error);
+  margin-top: var(--dp-space-1);
+}

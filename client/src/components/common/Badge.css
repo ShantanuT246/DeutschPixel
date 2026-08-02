@@ -1,0 +1,21 @@
+.dp-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.125rem 0.625rem;
+  font-size: var(--dp-font-size-xs);
+  font-weight: var(--dp-font-weight-semibold);
+  border-radius: var(--dp-radius-full);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+}
+
+/* Basic Variants */
+.dp-badge-default { background-color: var(--dp-color-bg-tertiary); color: var(--dp-color-text-secondary); }
+.dp-badge-primary { background-color: var(--dp-color-primary-light); color: var(--dp-color-primary); }
+
+/* Language Specific Variants */
+.dp-badge-der { background-color: rgba(46, 196, 182, 0.15); color: var(--dp-color-article-der); }
+.dp-badge-die { background-color: rgba(230, 57, 70, 0.15); color: var(--dp-color-article-die); }
+.dp-badge-das { background-color: rgba(123, 104, 238, 0.15); color: var(--dp-color-article-das); }
