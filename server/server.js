@@ -1,39 +1,28 @@
-const express = require('express');
-const cors = require('cors');
-const dotenv = require('dotenv');
-const connectDB = require('./config/db');
+import express from 'express';
+import dotenv from 'dotenv';
+import cors from 'cors';
+import connectDB from './config/db.js';
 
-// Load environment variables FIRST
+// 1. Import routes & middleware
+import authRoutes from './routes/authRoutes.js';
+import { errorHandler } from './middleware/errorHandler.js';
+
 dotenv.config();
 
-// Connect to MongoDB
+// Connect Database
 connectDB();
 
 const app = express();
 
-// ─── Core Middleware ─────────────────────────────────────────────
-// Parse JSON request bodies (for POST/PUT with JSON payloads)
-app.use(express.json());
+// 2. Essential Middleware
+app.use(cors({ origin: process.env.CORS_ORIGIN || 'http://localhost:5173' }));
+app.use(express.json()); // Parses incoming JSON payloads
 
-// CORS — allow frontend to make API calls
-app.use(cors({
-  origin: process.env.CORS_ORIGIN || 'http://localhost:5173',
-  credentials: true,
-}));
+// 3. Mount Routes
+app.use('/api/auth', authRoutes); // <-- THIS LINE MOUNTS THE AUTH ROUTER
 
-// ─── API Routes ──────────────────────────────────────────────────
-// Health check endpoint — useful for deployment monitoring
-app.get('/api/health', (req, res) => {
-  res.json({ 
-    success: true, 
-    status: 'API is running',
-    environment: process.env.NODE_ENV
-  });
-});
+// 4. Centralized Error Handler (MUST BE AFTER ROUTES)
+app.use(errorHandler);
 
-// ─── Start Server ────────────────────────────────────────────────
-const PORT = process.env.PORT || 5000;
-
-app.listen(PORT, () => {
-  console.log(`🚀 DeutschPixel API running on port ${PORT}`);
-});
+const PORT = process.env.PORT || 5001;
+app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
