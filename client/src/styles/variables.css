@@ -1,0 +1,75 @@
+/**
+ * DeutschPixel Design Tokens
+ * Prefix 'dp-' avoids conflicts with any third-party CSS we might add later.
+ */
+:root {
+  /* ─── Colors: Primary (Duolingo Green) ────────────────── */
+  --dp-color-primary: #58CC02;
+  --dp-color-primary-hover: #4CAF00;
+  --dp-color-primary-light: rgba(88, 204, 2, 0.12);
+
+  /* ─── Colors: Neutrals (Dark Theme Default) ─────────────── */
+  --dp-color-bg-primary: #0D1117;
+  --dp-color-bg-secondary: #161B22;
+  --dp-color-bg-elevated: #21283B;
+  
+  --dp-color-text-primary: #E6EDF3;
+  --dp-color-text-secondary: #8B949E;
+  --dp-color-text-muted: #6E7681;
+
+  --dp-color-border: rgba(139, 148, 158, 0.15);
+
+  /* ─── Article Colors (der/die/das) ────────────────────── */
+  --dp-color-article-der: #2EC4B6; /* Teal */
+  --dp-color-article-die: #E63946; /* Red */
+  --dp-color-article-das: #7B68EE; /* Purple */
+
+  /* ─── Typography & Spacing ────────────────────────────── */
+  --dp-font-family: 'Inter', system-ui, sans-serif;
+  
+  --dp-space-1: 0.25rem;
+  --dp-space-2: 0.5rem;    /* 8px */
+  --dp-space-3: 0.75rem;
+  --dp-space-4: 1rem;      /* 16px */
+  --dp-space-5: 1.25rem;
+  --dp-space-6: 1.5rem;    /* 24px */
+  --dp-space-8: 2rem;
+
+  --dp-font-size-xs: 0.75rem;
+  --dp-font-size-sm: 0.875rem;
+  --dp-font-size-base: 1rem;
+  --dp-font-size-md: 1.125rem;
+  --dp-font-size-lg: 1.25rem;
+  --dp-font-size-xl: 1.5rem;
+  --dp-font-size-2xl: 2rem;
+
+  --dp-font-weight-normal: 400;
+  --dp-font-weight-medium: 500;
+  --dp-font-weight-semibold: 600;
+  --dp-font-weight-bold: 700;
+
+  --dp-radius-md: 0.5rem;  /* 8px */
+  --dp-radius-lg: 0.75rem;
+  --dp-radius-xl: 1rem;    /* 16px */
+  --dp-radius-full: 9999px;
+
+  --dp-shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -2px rgba(0, 0, 0, 0.3);
+  --dp-shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.3), 0 4px 6px -4px rgba(0, 0, 0, 0.3);
+  --dp-shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.3), 0 8px 10px -6px rgba(0, 0, 0, 0.3);
+
+  --dp-transition-fast: 150ms ease;
+  --dp-transition-base: 250ms ease;
+}
+
+/* ─── Light Theme Override ────────────────────────────────── */
+[data-theme="light"] {
+  --dp-color-bg-primary: #F8FAFC;
+  --dp-color-bg-secondary: #FFFFFF;
+  --dp-color-bg-elevated: #FFFFFF;
+  
+  --dp-color-text-primary: #0F172A;
+  --dp-color-text-secondary: #475569;
+  --dp-color-text-muted: #94A3B8;
+
+  --dp-color-border: rgba(15, 23, 42, 0.1);
+}

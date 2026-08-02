@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+/* CSS Reset */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  font-family: var(--dp-font-family);
+  color: var(--dp-color-text-primary);
+  background-color: var(--dp-color-bg-primary);
+  min-height: 100vh;
+  transition: background-color var(--dp-transition-base), color var(--dp-transition-base);
+}
+
+a {
+  color: var(--dp-color-primary);
+  text-decoration: none;
+}
+
+button {
+  cursor: pointer;
+  font-family: inherit;
+  border: none;
+  background: none;
+}
